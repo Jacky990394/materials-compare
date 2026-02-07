@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Noto+Sans+TC:wght@300;400;700&display=swap');
+
+        :root {
+            --cad-bg: #001529;
+            --cad-line: #00ffff;
+            --cad-line-dim: rgba(0, 255, 255, 0.3);
+            --cad-text: #e0e0e0;
+            --cad-highlight: #ffdd00;
+        }
+
+        .mat-wrapper {
+            background-color: var(--cad-bg);
+            padding: 40px 20px;
+            font-family: 'Share Tech Mono', 'Noto Sans TC', sans-serif;
+            color: var(--cad-text);
+            box-sizing: border-box;
+        }
+
+        .mat-header {
+            border-left: 4px solid var(--cad-highlight);
+            padding-left: 15px;
+            margin-bottom: 25px;
+        }
+
+        .mat-title {
+            font-size: 1.8em;
+            color: var(--cad-line);
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .mat-subtitle {
+            color: #888;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        /* 表格樣式 */
+        .tech-table-container {
+            overflow-x: auto; /* 手機版可滑動 */
+            border: 1px solid var(--cad-line);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+        }
+
+        .tech-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px; /* 確保最小寬度以免擠在一起 */
+            background: rgba(0, 20, 40, 0.6);
+        }
+
+        .tech-table th, .tech-table td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid var(--cad-line-dim);
+        }
+
+        .tech-table th {
+            background: rgba(0, 255, 255, 0.1);
+            color: var(--cad-line);
+            font-size: 1.1em;
+            letter-spacing: 1px;
+        }
+
+        /* 第一欄：比較項目 */
+        .col-item {
+            text-align: left !important;
+            font-weight: bold;
+            color: #fff;
+            width: 25%;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        /* 星星樣式 */
+        .star {
+            color: var(--cad-highlight);
+            letter-spacing: 2px;
+        }
+        .star-empty {
+            color: #444;
+        }
+
+        /* 重點強調 */
+        .highlight-text {
+            color: var(--cad-highlight);
+            font-weight: bold;
+        }
+        
+        .bad-text {
+            color: #ff4444; /* 紅色警示 */
+            font-size: 0.9em;
+        }
+
+        /* 應用場地文字 */
+        .usage-text {
+            font-size: 0.9em;
+            line-height: 1.4;
+            color: #ccc;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="mat-wrapper">
+    <div class="mat-header">
+        <h2 class="mat-title">MATERIAL ANALYSIS // 材料特性分析</h2>
+        <div class="mat-subtitle">EVA 樹脂 vs. 壓克力樹脂 vs. 一般水泥漆</div>
+    </div>
+
+    <div class="tech-table-container">
+        <table class="tech-table">
+            <thead>
+                <tr>
+                    <th>比較項目</th>
+                    <th>EVA 樹脂<br><span style="font-size:0.7em; color:#888;">(彈性主材)</span></th>
+                    <th>壓克力樹脂<br><span style="font-size:0.7em; color:#888;">(耐候面漆)</span></th>
+                    <th>一般水泥漆<br><span style="font-size:0.7em; color:#888;">(裝飾用)</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col-item">耐水性 (耐泡)</td>
+                    <td>
+                        <span class="star">★★</span><span class="star-empty">★★★</span>
+                    </td>
+                    <td>
+                        <span class="star">★★★★</span><span class="star-empty">★</span>
+                    </td>
+                    <td>
+                        <span class="star">★</span><span class="star-empty">★★★★</span><br>
+                        <span class="bad-text">吸水易粉化</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-item">抗裂性 (彈性)</td>
+                    <td>
+                        <span class="star">★★★★★</span><br>
+                        <span class="highlight-text">極佳</span>
+                    </td>
+                    <td>
+                        <span class="star">★★★</span><span class="star-empty">★★</span>
+                    </td>
+                    <td>
+                        <span class="star">★</span><span class="star-empty">★★★★</span><br>
+                        <span class="bad-text">無彈性 (易裂)</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-item">耐候性 (抗UV)</td>
+                    <td>
+                        <span class="star">★★</span><span class="star-empty">★★★</span>
+                    </td>
+                    <td>
+                        <span class="star">★★★★★</span><br>
+                        <span class="highlight-text">極佳</span>
+                    </td>
+                    <td>
+                        <span class="star">★★</span><span class="star-empty">★★★</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-item">附著力 (抓地力)</td>
+                    <td>
+                        <span class="star">★★★★★</span>
+                    </td>
+                    <td>
+                        <span class="star">★★★</span><span class="star-empty">★★</span>
+                    </td>
+                    <td>
+                        <span class="star">★★★★</span><span class="star-empty">★</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-item">主要應用場地</td>
+                    <td class="usage-text">
+                        浴室、室內、<br>夾層防水<br>(不直曬陽光處)
+                    </td>
+                    <td class="usage-text">
+                        屋頂面漆、<br>外牆、窗框<br>(抗日曬雨淋)
+                    </td>
+                    <td class="usage-text">
+                        室內牆面美化<br>
+                        <span class="bad-text">❌ 不具防水功能</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div style="margin-top: 15px; font-size: 0.9em; color: #888; text-align: right;">
+        * 數據來源：昱揚工程實驗室施工經驗
+    </div>
+</div>
+
+</body>
+</html>
